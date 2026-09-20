@@ -11,6 +11,9 @@ var screen_size := Vector2(1.8, 1.0125)
 var frame_id := 0
 var connected := false
 var recording := false
+var session_id := ""
+var stop_requested := false
+var delivery_errors := 0
 var eye_supported := false
 var recentered := false
 var native_xr := false
@@ -179,9 +182,12 @@ func _process(delta: float) -> void:
 		send_clock = 0.0
 		var batch := queue.duplicate()
 		queue.clear()
-		sample_busy = sample_request.request(server_url + "/api/samples", headers(), HTTPClient.METHOD_POST, JSON.stringify({"samples": batch})) == OK
+		sample_busy = sample_request.request(server_url + "/api/samples", headers(), HTTPClient.METHOD_POST, JSON.stringify({"sessionId": session_id, "samples": batch})) == OK
 		if not sample_busy:
 			status_label.text = "Could not submit samples; inspect the session before using it."
+
+	if stop_requested and not sample_busy and queue.is_empty() and not command_busy:
+		command_busy = command_request.request(server_url + "/api/session/stop", headers(), HTTPClient.METHOD_POST, "{}") == OK
 
 func observe() -> void:
 	if not native_xr or frame_id == 0:
@@ -202,7 +208,7 @@ func observe() -> void:
 		recenter()
 	var uv: Variant = Tracking.screen_hit(ray_origin, ray_direction, screen.global_transform, screen_size) if choice.valid else null
 	source_label.text = "Tracking: " + str(choice.source) + (" — valid" if choice.valid else " — lost")
-	if recording:
+	if recording and not stop_requested:
 		queue.append({"clientId": client_id, "sequence": sequence, "frameId": frame_id,
 			"clientMonoMs": Time.get_ticks_usec() / 1000.0, "clientEpochMs": Time.get_unix_time_from_system() * 1000.0,
 			"source": choice.source, "fallbackReason": choice.fallbackReason, "valid": choice.valid,
@@ -231,8 +237,9 @@ func toggle_recording() -> void:
 	if not connected or command_busy:
 		return
 	# Let in-flight samples finish before stopping. The dashboard can stop/export as well.
-	if recording and (sample_busy or not queue.is_empty()):
-		status_label.text = "Samples are being saved. Use Stop in the browser recorder to finish and export."
+	if recording:
+		stop_requested = true
+		status_label.text = "Finishing queued samples…"
 		return
 	var endpoint := "/api/session/stop" if recording else "/api/session/start"
 	command_busy = command_request.request(server_url + endpoint, headers(), HTTPClient.METHOD_POST, JSON.stringify({"participant": "anonymous"})) == OK
@@ -260,14 +267,21 @@ func _frame_received(_result: int, code: int, _headers: PackedStringArray, body:
 
 func _samples_received(_result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	sample_busy = false
+	if code != 200:
+		delivery_errors += 1
 	parse_response(code, body)
 
 func apply_status(data: Dictionary) -> void:
 	if data.is_empty():
 		return
+	var next_session := str(data.sessionId) if data.sessionId != null else ""
+	if next_session != session_id:
+		queue.clear()
+		session_id = next_session
+		delivery_errors = 0
 	recording = data.recording
 	record_button.text = "Stop recording (F9)" if recording else "Start recording (F9)"
-	status_label.text = ("Recording · " if recording else "Connected · ") + str(data.samples) + " samples. Export through the browser recorder."
+	status_label.text = ("Recording · " if recording else "Connected · ") + str(data.samples) + " samples. Export through the browser recorder." + (" DELIVERY ERRORS: " + str(delivery_errors) if delivery_errors > 0 else "")
 
 func _status_received(_result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	status_busy = false
@@ -275,4 +289,5 @@ func _status_received(_result: int, code: int, _headers: PackedStringArray, body
 
 func _command_received(_result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	command_busy = false
+	stop_requested = false
 	apply_status(parse_response(code, body))

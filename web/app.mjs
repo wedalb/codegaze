@@ -2,7 +2,7 @@ import {findTarget} from './core.mjs';
 import {XRMonitor} from './xr.mjs';
 const $=id=>document.getElementById(id);
 const clientId=crypto.randomUUID();
-let key=new URLSearchParams(location.hash.slice(1)).get('key')||'',connected=false,recording=false,simulating=false,frame=null,sequence=0,pointer=null,pending=[],sending=false,stopping=false,frameBusy=false;
+let key=new URLSearchParams(location.hash.slice(1)).get('key')||'',connected=false,recording=false,simulating=false,frame=null,sequence=0,pointer=null,pending=[],sending=false,stopping=false,frameBusy=false,activeSessionId=null;
 history.replaceState(null,'',location.pathname);
 $('key').value=key;
 const xr=new XRMonitor(sample=>queueSample(sample),()=>{setSource();$('vr').textContent='Enter VR · head direction';});
@@ -22,8 +22,9 @@ async function checkXR(){
   catch{$('vr').disabled=true;}
 }
 function applyStatus(status){
+  if(activeSessionId!==status.sessionId){pending=[];activeSessionId=status.sessionId;}
   recording=status.recording;$('count').textContent=status.samples.toLocaleString();$('record-label').textContent=recording?'Recording':'Not recording';$('record-dot').classList.toggle('active',recording);$('record').textContent=recording?'Stop recording':'Start recording';$('export').disabled=recording||!status.sessionId;
-  if(status.demo){$('connection').textContent='Demo server · synthetic code';$('version');document.querySelector('.version').textContent='Demonstration · synthetic data';}
+  if(status.demo){$('connection').textContent='Demo server · synthetic code';document.querySelector('.version').textContent='Demonstration · synthetic data';}
   if(status.error)message(status.error);
 }
 async function refreshFrame(){
@@ -55,7 +56,7 @@ function queueSample(sample){
 }
 async function flush(){
   if(sending||!pending.length)return;sending=true;const batch=pending.splice(0,120);
-  try{const result=await api('samples',{samples:batch});if(result.accepted!==batch.length)throw new Error('The server did not accept every sample.');}
+  try{const result=await api('samples',{sessionId:activeSessionId,samples:batch});if(result.accepted!==batch.length)throw new Error('The server did not accept every sample.');}
   catch(e){message('Sample delivery failed: '+e.message+'. No automatic retry, to avoid duplicate measurements.');}
   finally{sending=false;}
 }
@@ -68,7 +69,7 @@ $('show-reticle').onchange=()=>{if(!$('show-reticle').checked)$('reticle').hidde
 $('record').onclick=async()=>{
   $('record').disabled=true;
   try{
-    if(recording){stopping=true;while(sending)await new Promise(r=>setTimeout(r,20));await flush();applyStatus(await api('session/stop',{}));stopping=false;}
+    if(recording){stopping=true;while(sending)await new Promise(r=>setTimeout(r,20));while(pending.length)await flush();applyStatus(await api('session/stop',{}));stopping=false;}
     else{pending=[];applyStatus(await api('session/start',{participant:$('participant').value}));}
     message('');
   }catch(e){message(e.message);stopping=false;}

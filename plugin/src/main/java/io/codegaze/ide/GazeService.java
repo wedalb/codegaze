@@ -99,6 +99,8 @@ public final class GazeService implements Disposable {
                 recorder.stop(); respond(exchange, 200, status());
             } else if (path.equals("/api/samples") && method.equals("POST")) {
                 JsonObject input = parse(exchange);
+                if (!input.has("sessionId") || !input.get("sessionId").getAsString().equals(recorder.status().get("sessionId")))
+                    throw new IllegalStateException("Session changed; refresh status before sending samples");
                 JsonArray samples = input.getAsJsonArray("samples");
                 if (samples == null || samples.size() > 256) throw new IllegalArgumentException("Expected at most 256 samples");
                 List<Model.Sample> validated = new ArrayList<>();

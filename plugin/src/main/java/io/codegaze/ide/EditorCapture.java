@@ -2,6 +2,7 @@ package io.codegaze.ide;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.*;
+import com.intellij.openapi.editor.colors.EditorFontType;
 import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.editor.highlighter.HighlighterIterator;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -102,7 +103,7 @@ public final class EditorCapture {
             if (c == '\n' || c == '\r' || editor.getFoldingModel().isOffsetCollapsed(i)) continue;
             Point a = editor.offsetToXY(i), b = editor.offsetToXY(i + 1);
             // A soft-wrap boundary moves b to the next row; measure the current glyph locally.
-            int glyphWidth = b.y == a.y ? b.x - a.x : editor.getContentComponent().getFontMetrics(editor.getContentComponent().getFont()).charWidth(c);
+            int glyphWidth = b.y == a.y ? b.x - a.x : editor.getContentComponent().getFontMetrics(editor.getColorsScheme().getFont(EditorFontType.PLAIN)).charWidth(c);
             if (glyphWidth <= 0) continue;
             Rectangle r = new Rectangle(a.x, a.y, glyphWidth, editor.getLineHeight()).intersection(visible);
             if (r.isEmpty()) continue;

@@ -31,9 +31,9 @@ class DemoTests(unittest.TestCase):
         r=token['bounds'][0]
         self.request('/api/session/start',{'participant':'P01'})
         sample=dict(clientId='test',sequence=0,frameId=frame['id'],clientMonoMs=12,clientEpochMs=1000,source='simulated',fallbackReason='test',valid=True,u=(r['x']+r['width']/2)/frame['width'],v=(r['y']+r['height']/2)/frame['height'],origin=None,direction=None,sensorTime=None,sensorTimeBasis='unavailable')
-        result=json.loads(self.request('/api/samples',{'samples':[sample]}))
+        result=json.loads(self.request('/api/samples',{'sessionId':self.server.state.session['id'],'samples':[sample]}))
         self.assertEqual(result['last']['target']['text'],'quantity')
-        with self.assertRaises(urllib.error.HTTPError):self.request('/api/samples',{'samples':[sample]})
+        with self.assertRaises(urllib.error.HTTPError):self.request('/api/samples',{'sessionId':self.server.state.session['id'],'samples':[sample]})
         self.request('/api/session/stop',{})
         with zipfile.ZipFile(io.BytesIO(self.request('/api/export'))) as archive:
             self.assertEqual(len(archive.namelist()),4)
@@ -41,7 +41,7 @@ class DemoTests(unittest.TestCase):
     def test_stale_frame_never_uses_latest(self):
         self.request('/api/session/start',{})
         sample=dict(clientId='test',sequence=0,frameId=99999,clientMonoMs=12,source='head',valid=True,u=.5,v=.5)
-        result=json.loads(self.request('/api/samples',{'samples':[sample]}))
+        result=json.loads(self.request('/api/samples',{'sessionId':self.server.state.session['id'],'samples':[sample]}))
         self.assertEqual(result['last']['mappingStatus'],'frame_expired')
         self.assertIsNone(result['last']['target'])
 

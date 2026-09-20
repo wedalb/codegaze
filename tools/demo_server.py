@@ -132,6 +132,7 @@ class Handler(BaseHTTPRequestHandler):
                 if path=='/api/session/start' and self.command=='POST':state.start(data.get('participant','anonymous'));return self.send(200,state.status())
                 if path=='/api/session/stop' and self.command=='POST':state.recording=False;return self.send(200,state.status())
                 if path=='/api/samples' and self.command=='POST':
+                    if data.get('sessionId') != (state.session['id'] if state.session else None):raise RuntimeError('Session changed')
                     samples=data.get('samples')
                     if not isinstance(samples,list) or len(samples)>256:raise ValueError('Expected up to 256 samples')
                     events=[state.record(s) for s in samples]
