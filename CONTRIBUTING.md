@@ -13,14 +13,17 @@ Contributions that improve measurement correctness, headset interoperability, ed
 ```sh
 git clone https://github.com/wedalb/codegaze.git
 cd codegaze
-./gradlew :plugin:test :plugin:buildPlugin :plugin:verifyPluginStructure
+./gradlew :plugin:test :plugin:buildPlugin :plugin:verifyPluginStructure -Djava.awt.headless=false
 node --test tests/*.test.mjs
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 godot --headless --xr-mode off --path native --editor --import --quit
 godot --headless --xr-mode off --path native --script test_tracking.gd
+python3 tools/test_native_client.py
 ```
 
 On Windows use `gradlew.bat` and `python`. Configure JAVA_HOME to point to JDK 21 if needed. The first plugin build downloads a complete IntelliJ distribution and needs several GB of disk space.
+
+The editor-painting integration test needs a display. On a Linux CI server, prefix the Gradle command with `xvfb-run -a`, as the workflow does. With headless mode enabled, that UI test is skipped; do not count it as hardware or rendering validation.
 
 ## Run during development
 

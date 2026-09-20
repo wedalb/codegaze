@@ -39,6 +39,8 @@ var status_label: Label
 var source_label: Label
 var head_only: CheckBox
 var record_button: Button
+var ui_layer: CanvasLayer
+var vr_status: Label3D
 var server_url := "http://127.0.0.1:8742"
 var pairing_key := ""
 
@@ -62,6 +64,11 @@ func _ready() -> void:
 	material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR
 	screen.material_override = material
 	add_child(screen)
+	vr_status = Label3D.new()
+	vr_status.font_size = 24
+	vr_status.pixel_size = 0.0014
+	vr_status.position = Vector3(0, -screen_size.y / 2 - 0.08, 0.005)
+	screen.add_child(vr_status)
 	screen.position = Vector3(0, 0, -1.6)
 	frame_request = make_request(_frame_received)
 	sample_request = make_request(_samples_received)
@@ -99,6 +106,7 @@ func make_request(callback: Callable) -> HTTPRequest:
 
 func build_ui() -> void:
 	var layer := CanvasLayer.new()
+	ui_layer = layer
 	add_child(layer)
 	var panel := PanelContainer.new()
 	panel.position = Vector2(16, 16)
@@ -156,6 +164,8 @@ func connect_server() -> void:
 		status_label.text = "Enter the pairing key from IntelliJ."
 		return
 	connected = true
+	if native_xr:
+		ui_layer.visible = false
 	poll_clock = 1.0
 	status_clock = 2.0
 
@@ -208,6 +218,7 @@ func observe() -> void:
 		recenter()
 	var uv: Variant = Tracking.screen_hit(ray_origin, ray_direction, screen.global_transform, screen_size) if choice.valid else null
 	source_label.text = "Tracking: " + str(choice.source) + (" — valid" if choice.valid else " — lost")
+	vr_status.text = source_label.text + (" | Recording" if recording else " | Not recording")
 	if recording and not stop_requested:
 		queue.append({"clientId": client_id, "sequence": sequence, "frameId": frame_id,
 			"clientMonoMs": Time.get_ticks_usec() / 1000.0, "clientEpochMs": Time.get_unix_time_from_system() * 1000.0,
@@ -230,6 +241,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_R:
 			recenter()
+		elif event.keycode == KEY_ESCAPE:
+			ui_layer.visible = not ui_layer.visible
+		elif event.keycode == KEY_H:
+			head_only.button_pressed = not head_only.button_pressed
 		elif event.keycode == KEY_F9:
 			toggle_recording()
 
@@ -263,6 +278,7 @@ func _frame_received(_result: int, code: int, _headers: PackedStringArray, body:
 	material.albedo_texture = ImageTexture.create_from_image(image)
 	screen_size = Vector2(1.8, 1.8 * float(data.height) / float(data.width))
 	(screen.mesh as QuadMesh).size = screen_size
+	vr_status.position.y = -screen_size.y / 2 - 0.08
 	frame_id = int(data.id)
 
 func _samples_received(_result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:

@@ -40,9 +40,12 @@ public final class Recorder implements AutoCloseable {
         count = 0; lastError = null; lastSequences.clear(); savedFrames.clear();
         return session;
     }
-    public synchronized Model.Event record(Model.Sample sample, Model.Frame frame) throws IOException {
+    public synchronized Model.Event record(String expectedSessionId, Model.Sample sample, Model.Frame frame) throws IOException {
         Mapper.validate(sample);
         if (events == null) throw new IllegalStateException("Start recording before sending samples");
+        // Check under the same lock as the write: a stop/start may race with an HTTP batch.
+        if (!session.id().equals(expectedSessionId))
+            throw new IllegalStateException("Session changed; refresh status before sending samples");
         Long last = lastSequences.get(sample.clientId());
         if (last != null && sample.sequence() <= last) throw new IllegalArgumentException("Duplicate or out-of-order sample");
         Mapper.Result result = Mapper.map(frame, sample);

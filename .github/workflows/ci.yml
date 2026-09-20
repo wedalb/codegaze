@@ -48,6 +48,7 @@ jobs:
           godot --headless --xr-mode off --path native --editor --import --quit
           godot --headless --xr-mode off --path native --script test_tracking.gd
           godot --headless --xr-mode off --path native --quit-after 5
+          python3 tools/test_native_client.py
       - name: Export native clients
         run: |
           bash tools/install_godot_ci.sh templates
@@ -55,11 +56,13 @@ jobs:
           godot --headless --xr-mode off --path native --export-release Windows ../release/windows/CodeGaze.exe
           godot --headless --xr-mode off --path native --export-release Linux ../release/linux/CodeGaze.x86_64
           godot --headless --xr-mode off --path native --export-release macOS ../release/macos/CodeGaze.zip
-          cp LICENSE THIRD_PARTY_NOTICES.md release/windows/
-          cp LICENSE THIRD_PARTY_NOTICES.md release/linux/
+          cp LICENSE THIRD_PARTY_NOTICES.md third_party/Godot-COPYRIGHT.txt release/windows/
+          cp LICENSE THIRD_PARTY_NOTICES.md third_party/Godot-COPYRIGHT.txt release/linux/
+          cp LICENSE THIRD_PARTY_NOTICES.md third_party/Godot-COPYRIGHT.txt release/macos/
           cd release/windows && zip -r ../CodeGaze-Windows-x86_64.zip .
           cd ../linux && zip -r ../CodeGaze-Linux-x86_64.zip .
-          cd ../macos && mv CodeGaze.zip ../CodeGaze-macOS-universal.zip
+          cd ../macos && zip CodeGaze.zip LICENSE THIRD_PARTY_NOTICES.md Godot-COPYRIGHT.txt
+          mv CodeGaze.zip ../CodeGaze-macOS-universal.zip
       - uses: actions/upload-artifact@v4
         with:
           name: native-clients

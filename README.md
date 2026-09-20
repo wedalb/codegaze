@@ -52,7 +52,7 @@ If port 8742 is occupied, stop another CodeGaze project/demo instance first. Onl
 2. For Beyond 2e, install Bigscreen's eye tracking software, complete its calibration, and ensure gaze is exposed to OpenXR. [Bigscreen instructions](https://store.bigscreenvr.com/en-gb/blogs/beyond/how-eyetracking-works-in-bigscreen-beyond-2e).
 3. Download and extract `CodeGaze-Windows-x86_64.zip`; run `CodeGaze.exe`.
 4. Copy the local server URL and pairing key from the IntelliJ CodeGaze tool window into the viewer. Select **Connect**.
-5. Put on the headset. A virtual screen displays your editor. Press **R** in the viewer to reposition it in front of you. Focus IntelliJ when you want to type.
+5. Put on the headset. A virtual screen displays your editor. Press **R** in the viewer to reposition it in front of you. The desktop setup panel hides after connecting in VR; **Escape** toggles it and **H** toggles forced head direction. A label below the virtual monitor shows tracking and recording state. Focus IntelliJ when you want to type.
 6. In the browser recorder, enter an anonymous participant label and select **Start recording**. The native client samples automatically while the session is active.
 7. Check the native status: `eye` or `head`, and `valid` or `lost`. **Force head direction** lets you run a head-only condition explicitly.
 8. Stop recording in the browser, then **Download session**. Stop sharing in IntelliJ when finished.

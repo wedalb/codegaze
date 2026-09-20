@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-The CI workflow builds the IntelliJ plugin, runs Java mapping/recording tests and IntelliJ PSI integration tests, checks browser geometry/source selection, tests the synthetic HTTP workflow and dwell analysis, imports/tests Godot scripts and exports native binaries. See the exact release commit's workflow for outcomes; a successful build does not validate hardware.
+The CI workflow builds the IntelliJ plugin, runs Java mapping/recording tests and IntelliJ PSI integration tests, checks browser geometry/source selection, tests the synthetic HTTP workflow and dwell analysis, imports/tests Godot scripts and exports native binaries. The real editor-painting test runs under Xvfb and checks token mapping before and after an unsaved edit. The native integration test connects the actual Godot client to the synthetic server, decodes an editor image, starts/stops a session and checks that no tracking is fabricated without a headset. See the exact release commit's workflow for outcomes; a successful build does not validate hardware.
 
 ## Manual acceptance before research use
 

@@ -106,7 +106,8 @@ public final class GazeService implements Disposable {
                 List<Model.Sample> validated = new ArrayList<>();
                 for (JsonElement sample : samples) { Model.Sample s = Recorder.JSON.fromJson(sample, Model.Sample.class); Mapper.validate(s); validated.add(s); }
                 Model.Event last = null;
-                for (Model.Sample sample : validated) last = recorder.record(sample, store.get(sample.frameId()));
+                String sessionId = input.get("sessionId").getAsString();
+                for (Model.Sample sample : validated) last = recorder.record(sessionId, sample, store.get(sample.frameId()));
                 Map<String,Object> result = new LinkedHashMap<>(); result.put("accepted", validated.size()); result.put("last", last);
                 respond(exchange, 200, result);
             } else if (path.equals("/api/export") && method.equals("GET")) {

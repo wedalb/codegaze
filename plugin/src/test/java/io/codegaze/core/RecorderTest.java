@@ -12,12 +12,12 @@ class RecorderTest {
     @TempDir Path directory;
     @Test void fullSessionPersistsRawSamplesAndFrameBoundTargets() throws Exception {
         try(Recorder recorder=new Recorder(directory)) {
-            recorder.start(Map.of("participant","P01"));
-            Model.Event eye=recorder.record(MappingTest.sample(1,1,.12,.12,"eye",true),MappingTest.frame(1,"quantity","rev1"));
-            Model.Event head=recorder.record(MappingTest.sample(2,1,.12,.12,"head",true),MappingTest.frame(1,"quantity","rev1"));
+            String sessionId=recorder.start(Map.of("participant","P01")).id();
+            Model.Event eye=recorder.record(sessionId,MappingTest.sample(1,1,.12,.12,"eye",true),MappingTest.frame(1,"quantity","rev1"));
+            Model.Event head=recorder.record(sessionId,MappingTest.sample(2,1,.12,.12,"head",true),MappingTest.frame(1,"quantity","rev1"));
             assertEquals("eye",eye.sample().source());assertEquals("head",head.sample().source());
             assertEquals("quantity",eye.target().text());
-            assertThrows(IllegalArgumentException.class,()->recorder.record(MappingTest.sample(2,1,.12,.12,"head",true),MappingTest.frame(1,"q","r")));
+            assertThrows(IllegalArgumentException.class,()->recorder.record(sessionId,MappingTest.sample(2,1,.12,.12,"head",true),MappingTest.frame(1,"q","r")));
             assertThrows(IllegalStateException.class,recorder::export);
             recorder.stop();
             Map<String,String> files=new HashMap<>();
@@ -33,6 +33,17 @@ class RecorderTest {
     }
     @Test void noRecordingCannotSilentlyAcceptSamples() {
         Recorder recorder=new Recorder(directory);
-        assertThrows(IllegalStateException.class,()->recorder.record(MappingTest.sample(0,1,.1,.1,"eye",true),null));
+        assertThrows(IllegalStateException.class,()->recorder.record("inactive",MappingTest.sample(0,1,.1,.1,"eye",true),null));
+    }
+    @Test void lateSampleCannotEnterTheNextSession() throws Exception {
+        try(Recorder recorder=new Recorder(directory)) {
+            String previous=recorder.start(Map.of()).id();
+            recorder.stop();
+            String current=recorder.start(Map.of()).id();
+            Model.Sample sample=MappingTest.sample(1,1,.12,.12,"head",true);
+            assertThrows(IllegalStateException.class,()->recorder.record(previous,sample,null));
+            assertEquals(0L,recorder.status().get("samples"));
+            assertEquals(current,recorder.record(current,sample,null).sessionId());
+        }
     }
 }
