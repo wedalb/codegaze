@@ -33,7 +33,7 @@ public final class EditorCapture {
             if (project.isDisposed()) return;
             // Commit before read action so PSI and document contents describe the same revision.
             PsiDocumentManager.getInstance(project).commitAllDocuments();
-            ApplicationManager.getApplication().runReadAction(() -> pixels[0] = paint());
+            ApplicationManager.getApplication().runReadAction(() -> { pixels[0] = paint(); });
         };
         if (ApplicationManager.getApplication().isDispatchThread()) action.run();
         else ApplicationManager.getApplication().invokeAndWait(action);
