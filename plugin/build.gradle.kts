@@ -20,6 +20,7 @@ dependencies {
         testFramework(TestFrameworkType.Platform)
     }
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+    testImplementation("junit:junit:4.13.2")
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.11.4")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -28,7 +29,7 @@ java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
 
 intellijPlatform {
     pluginConfiguration {
-        id = "io.codegaze.intellij"
+        id = "io.codegaze"
         name = "CodeGaze"
         version = project.version.toString()
         ideaVersion { sinceBuild = "243" }
@@ -46,4 +47,8 @@ tasks.test {
     systemProperty("java.awt.headless", System.getProperty("java.awt.headless", "true"))
     maxHeapSize = "2g"
     testLogging { events("passed", "skipped", "failed") }
+}
+
+tasks.named<org.gradle.api.tasks.bundling.Zip>("buildPlugin") {
+    archiveBaseName.set("CodeGaze")
 }

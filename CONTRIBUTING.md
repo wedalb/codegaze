@@ -58,6 +58,6 @@ Prefer standard OpenXR. Confirm support for XR_EXT_eye_gaze_interaction at runti
 
 ## Releases
 
-The Build and test workflow builds plugin/native ZIP artifacts from each commit. A release must point to a passing commit. Download that commit's artifacts, include the source archive, publish clear validation limits and add SHA-256 checksums. Do not publish a hardware-validated claim without the device acceptance record. Keep release versions in plugin/build.gradle.kts, plugin service metadata, native/project.godot, export_presets.cfg, and viewer labels consistent.
+The Build and test workflow builds plugin/native ZIP artifacts from each commit. A release must point to a passing commit. Push a version tag such as v0.1.0 only after reviewing the passing commit. The tag workflow rebuilds and tests, packages source and SHA-256 checksums, and publishes a GitHub prerelease using docs/release-notes.md. Do not publish a hardware-validated claim without the device acceptance record. Keep release versions in plugin/build.gradle.kts, plugin service metadata, native/project.godot, export_presets.cfg, and viewer labels consistent.
 
 License: MIT. By contributing, you agree to license your contribution under the repository's MIT license.

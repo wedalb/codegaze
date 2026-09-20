@@ -1,5 +1,5 @@
 <idea-plugin>
-  <id>io.codegaze.intellij</id>
+  <id>io.codegaze</id>
   <name>CodeGaze</name>
   <vendor url="https://github.com/wedalb/codegaze">CodeGaze contributors</vendor>
   <description><![CDATA[
