@@ -1,0 +1,15 @@
+<idea-plugin>
+  <id>io.codegaze.intellij</id>
+  <name>CodeGaze</name>
+  <vendor url="https://github.com/wedalb/codegaze">CodeGaze contributors</vendor>
+  <description><![CDATA[
+    Display your live editor in VR and record timestamped code-token estimates using
+    OpenXR eye gaze, head direction, or a clearly labelled simulator. Includes a local
+    viewer, frame-bound source mapping, and CSV/JSONL session export.
+  ]]></description>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.java</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="CodeGaze" anchor="right" factoryClass="io.codegaze.ide.GazeToolWindow"/>
+  </extensions>
+</idea-plugin>

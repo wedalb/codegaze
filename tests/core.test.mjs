@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {makePanel,intersectPanel,rotate,selectTracking,findTarget} from '../web/core.mjs';
+const panel=makePanel([0,0,0],[0,0,0,1],2,2,2);
+test('head centre intersects exact monitor centre',()=>{assert.deepEqual(intersectPanel([0,0,0],[0,0,-1],panel),{u:.5,v:.5,distance:2});});
+test('top left corresponds to image top left',()=>{const hit=intersectPanel([0,0,0],[-.9,.4,-2],panel);assert.ok(Math.abs(hit.u-.05)<1e-8);assert.ok(Math.abs(hit.v-.1)<1e-8);});
+test('off screen, behind, parallel and invalid rays are rejected',()=>{for(const ray of [[0,0,1],[1,0,0],[8,0,-2],[NaN,0,-1]])assert.equal(intersectPanel([0,0,0],ray,panel),null);});
+test('recentered tilted screen maps head centre correctly',()=>{const q=[0,Math.sin(.3),0,Math.cos(.3)],p=makePanel([3,1,4],q);const hit=intersectPanel([3,1,4],rotate(q,[0,0,-1]),p);assert.ok(Math.abs(hit.u-.5)<1e-7);assert.ok(Math.abs(hit.v-.5)<1e-7);});
+test('valid eyes win; missing and lost eyes fall back with provenance',()=>{const head={valid:true,origin:[0,0,0],direction:[0,0,-1]};assert.equal(selectTracking({supported:true,valid:true},head).source,'eye');assert.equal(selectTracking({supported:false},head).fallbackReason,'eye_tracking_unavailable');assert.equal(selectTracking({supported:true,valid:false},head).fallbackReason,'eye_tracking_lost');assert.equal(selectTracking({supported:true,valid:true},head,'head').source,'head');assert.equal(selectTracking(null,{valid:false}).valid,false);});
+test('token lookup never snaps whitespace to closest identifier',()=>{const frame={width:100,height:100,targets:[{text:'value',bounds:[{x:10,y:10,width:20,height:10}]}]};assert.equal(findTarget(frame,.15,.15).text,'value');assert.equal(findTarget(frame,.3,.15),null);assert.equal(findTarget(frame,.9,.9),null);});
+test('overlapping regions remain ambiguous',()=>{const t={text:'x',bounds:[{x:0,y:0,width:100,height:100}]};assert.equal(findTarget({width:100,height:100,targets:[t,t]},.5,.5),null);});

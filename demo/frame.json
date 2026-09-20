@@ -1,0 +1,1428 @@
+{
+  "width": 1200,
+  "height": 640,
+  "title": "OrderService.java \u00b7 synthetic demonstration",
+  "status": "ready",
+  "targets": [
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "package",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 0,
+      "endOffset": 7,
+      "line": 1,
+      "column": 1,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 78,
+          "y": 16,
+          "width": 77,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "example",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 8,
+      "endOffset": 15,
+      "line": 1,
+      "column": 9,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 166,
+          "y": 16,
+          "width": 77,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ";",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 15,
+      "endOffset": 16,
+      "line": 1,
+      "column": 16,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 243,
+          "y": 16,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "public",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 18,
+      "endOffset": 24,
+      "line": 3,
+      "column": 1,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 78,
+          "y": 78,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "class",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 25,
+      "endOffset": 30,
+      "line": 3,
+      "column": 8,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 155,
+          "y": 78,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "OrderService",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 31,
+      "endOffset": 43,
+      "line": 3,
+      "column": 14,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 221,
+          "y": 78,
+          "width": 132,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "{",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 44,
+      "endOffset": 45,
+      "line": 3,
+      "column": 27,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 364,
+          "y": 78,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "private",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 50,
+      "endOffset": 57,
+      "line": 4,
+      "column": 5,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 122,
+          "y": 109,
+          "width": 77,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "static",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 58,
+      "endOffset": 64,
+      "line": 4,
+      "column": 13,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 210,
+          "y": 109,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "final",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 65,
+      "endOffset": 70,
+      "line": 4,
+      "column": 20,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 287,
+          "y": 109,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "double",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 71,
+      "endOffset": 77,
+      "line": 4,
+      "column": 26,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 353,
+          "y": 109,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "TAX_RATE",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 78,
+      "endOffset": 86,
+      "line": 4,
+      "column": 33,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 430,
+          "y": 109,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "=",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 87,
+      "endOffset": 88,
+      "line": 4,
+      "column": 42,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 529,
+          "y": 109,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "0",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 89,
+      "endOffset": 90,
+      "line": 4,
+      "column": 44,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 551,
+          "y": 109,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ".",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 90,
+      "endOffset": 91,
+      "line": 4,
+      "column": 45,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 562,
+          "y": 109,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "19",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 91,
+      "endOffset": 93,
+      "line": 4,
+      "column": 46,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 573,
+          "y": 109,
+          "width": 22,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ";",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 93,
+      "endOffset": 94,
+      "line": 4,
+      "column": 48,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 595,
+          "y": 109,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "public",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 100,
+      "endOffset": 106,
+      "line": 6,
+      "column": 5,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 122,
+          "y": 171,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "double",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 107,
+      "endOffset": 113,
+      "line": 6,
+      "column": 12,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 199,
+          "y": 171,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "calculateTotal",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 114,
+      "endOffset": 128,
+      "line": 6,
+      "column": 19,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 276,
+          "y": 171,
+          "width": 154,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "(",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 128,
+      "endOffset": 129,
+      "line": 6,
+      "column": 33,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 430,
+          "y": 171,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "double",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 129,
+      "endOffset": 135,
+      "line": 6,
+      "column": 34,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 441,
+          "y": 171,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "price",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 136,
+      "endOffset": 141,
+      "line": 6,
+      "column": 41,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 518,
+          "y": 171,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ",",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 141,
+      "endOffset": 142,
+      "line": 6,
+      "column": 46,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 573,
+          "y": 171,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "int",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 143,
+      "endOffset": 146,
+      "line": 6,
+      "column": 48,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 595,
+          "y": 171,
+          "width": 33,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "quantity",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 147,
+      "endOffset": 155,
+      "line": 6,
+      "column": 52,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 639,
+          "y": 171,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ")",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 155,
+      "endOffset": 156,
+      "line": 6,
+      "column": 60,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 727,
+          "y": 171,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "{",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 157,
+      "endOffset": 158,
+      "line": 6,
+      "column": 62,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 749,
+          "y": 171,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "double",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 167,
+      "endOffset": 173,
+      "line": 7,
+      "column": 9,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 166,
+          "y": 202,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "subtotal",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 174,
+      "endOffset": 182,
+      "line": 7,
+      "column": 16,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 243,
+          "y": 202,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "=",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 183,
+      "endOffset": 184,
+      "line": 7,
+      "column": 25,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 342,
+          "y": 202,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "price",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 185,
+      "endOffset": 190,
+      "line": 7,
+      "column": 27,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 364,
+          "y": 202,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "*",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 191,
+      "endOffset": 192,
+      "line": 7,
+      "column": 33,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 430,
+          "y": 202,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "quantity",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 193,
+      "endOffset": 201,
+      "line": 7,
+      "column": 35,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 452,
+          "y": 202,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ";",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 201,
+      "endOffset": 202,
+      "line": 7,
+      "column": 43,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 540,
+          "y": 202,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "double",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 211,
+      "endOffset": 217,
+      "line": 8,
+      "column": 9,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 166,
+          "y": 233,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "tax",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 218,
+      "endOffset": 221,
+      "line": 8,
+      "column": 16,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 243,
+          "y": 233,
+          "width": 33,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "=",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 222,
+      "endOffset": 223,
+      "line": 8,
+      "column": 20,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 287,
+          "y": 233,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "subtotal",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 224,
+      "endOffset": 232,
+      "line": 8,
+      "column": 22,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 309,
+          "y": 233,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "*",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 233,
+      "endOffset": 234,
+      "line": 8,
+      "column": 31,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 408,
+          "y": 233,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "TAX_RATE",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 235,
+      "endOffset": 243,
+      "line": 8,
+      "column": 33,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 430,
+          "y": 233,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ";",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 243,
+      "endOffset": 244,
+      "line": 8,
+      "column": 41,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 518,
+          "y": 233,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "double",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 253,
+      "endOffset": 259,
+      "line": 9,
+      "column": 9,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 166,
+          "y": 264,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "total",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 260,
+      "endOffset": 265,
+      "line": 9,
+      "column": 16,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 243,
+          "y": 264,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "=",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 266,
+      "endOffset": 267,
+      "line": 9,
+      "column": 22,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 309,
+          "y": 264,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "subtotal",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 268,
+      "endOffset": 276,
+      "line": 9,
+      "column": 24,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 331,
+          "y": 264,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "+",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 277,
+      "endOffset": 278,
+      "line": 9,
+      "column": 33,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 430,
+          "y": 264,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "tax",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 279,
+      "endOffset": 282,
+      "line": 9,
+      "column": 35,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 452,
+          "y": 264,
+          "width": 33,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ";",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 282,
+      "endOffset": 283,
+      "line": 9,
+      "column": 38,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 485,
+          "y": 264,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "if",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 293,
+      "endOffset": 295,
+      "line": 11,
+      "column": 9,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 166,
+          "y": 326,
+          "width": 22,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "(",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 296,
+      "endOffset": 297,
+      "line": 11,
+      "column": 12,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 199,
+          "y": 326,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "quantity",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 297,
+      "endOffset": 305,
+      "line": 11,
+      "column": 13,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 210,
+          "y": 326,
+          "width": 88,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ">",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 306,
+      "endOffset": 307,
+      "line": 11,
+      "column": 22,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 309,
+          "y": 326,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "=",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 307,
+      "endOffset": 308,
+      "line": 11,
+      "column": 23,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 320,
+          "y": 326,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "10",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 309,
+      "endOffset": 311,
+      "line": 11,
+      "column": 25,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 342,
+          "y": 326,
+          "width": 22,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ")",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 311,
+      "endOffset": 312,
+      "line": 11,
+      "column": 27,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 364,
+          "y": 326,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "{",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 313,
+      "endOffset": 314,
+      "line": 11,
+      "column": 29,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 386,
+          "y": 326,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "total",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 327,
+      "endOffset": 332,
+      "line": 12,
+      "column": 13,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 210,
+          "y": 357,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "=",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 333,
+      "endOffset": 334,
+      "line": 12,
+      "column": 19,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 276,
+          "y": 357,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "total",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 335,
+      "endOffset": 340,
+      "line": 12,
+      "column": 21,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 298,
+          "y": 357,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "*",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 341,
+      "endOffset": 342,
+      "line": 12,
+      "column": 27,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 364,
+          "y": 357,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "0",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 343,
+      "endOffset": 344,
+      "line": 12,
+      "column": 29,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 386,
+          "y": 357,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ".",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 344,
+      "endOffset": 345,
+      "line": 12,
+      "column": 30,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 397,
+          "y": 357,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "95",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 345,
+      "endOffset": 347,
+      "line": 12,
+      "column": 31,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 408,
+          "y": 357,
+          "width": 22,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ";",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 347,
+      "endOffset": 348,
+      "line": 12,
+      "column": 33,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 430,
+          "y": 357,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "}",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 357,
+      "endOffset": 358,
+      "line": 13,
+      "column": 9,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 166,
+          "y": 388,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "return",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 368,
+      "endOffset": 374,
+      "line": 15,
+      "column": 9,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 166,
+          "y": 450,
+          "width": 66,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "total",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 375,
+      "endOffset": 380,
+      "line": 15,
+      "column": 16,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 243,
+          "y": 450,
+          "width": 55,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": ";",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 380,
+      "endOffset": 381,
+      "line": 15,
+      "column": 21,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 298,
+          "y": 450,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "}",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 386,
+      "endOffset": 387,
+      "line": 16,
+      "column": 5,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 122,
+          "y": 481,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    },
+    {
+      "kind": "DEMO_TOKEN",
+      "text": "}",
+      "file": "OrderService.java",
+      "revision": "aab1c31b4a46d99f61dc980c3bd12ba0996e198a7fca740eccb83e784a3ebd34",
+      "startOffset": 388,
+      "endOffset": 389,
+      "line": 17,
+      "column": 1,
+      "symbol": null,
+      "symbolKind": null,
+      "bounds": [
+        {
+          "x": 78,
+          "y": 512,
+          "width": 11,
+          "height": 27
+        }
+      ]
+    }
+  ]
+}

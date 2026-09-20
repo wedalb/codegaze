@@ -1,0 +1,14 @@
+.gradle/
+**/build/
+.idea/
+*.iml
+.DS_Store
+native/.godot/
+native/export_presets.cfg.local
+release/
+recordings/
+*.codegaze-session/
+*.log
+__pycache__/
+node_modules/
+.env
