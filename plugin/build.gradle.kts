@@ -43,7 +43,7 @@ tasks.processResources {
 
 tasks.test {
     useJUnitPlatform()
-    systemProperty("java.awt.headless", "true")
+    systemProperty("java.awt.headless", System.getProperty("java.awt.headless", "true"))
     maxHeapSize = "2g"
     testLogging { events("passed", "skipped", "failed") }
 }

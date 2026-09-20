@@ -27,13 +27,15 @@ public final class EditorCapture {
                           String status, List<Model.Target> targets) {}
     public EditorCapture(Project project) { this.project = project; }
 
-    public Model.Frame capture() throws Exception {
+    public Model.Frame capture() throws Exception { return captureEditor(null); }
+
+    Model.Frame captureEditor(Editor selectedEditor) throws Exception {
         Pixels[] pixels = new Pixels[1];
         Runnable action = () -> {
             if (project.isDisposed()) return;
             // Commit before read action so PSI and document contents describe the same revision.
             PsiDocumentManager.getInstance(project).commitAllDocuments();
-            ApplicationManager.getApplication().runReadAction(() -> { pixels[0] = paint(); });
+            ApplicationManager.getApplication().runReadAction(() -> { pixels[0] = paint(selectedEditor); });
         };
         if (ApplicationManager.getApplication().isDispatchThread()) action.run();
         else ApplicationManager.getApplication().invokeAndWait(action);
@@ -44,9 +46,9 @@ public final class EditorCapture {
         return new Model.Frame(p.id(), p.epoch(), p.mono(), p.image().getWidth(), p.image().getHeight(),
                 Base64.getEncoder().encodeToString(bytes.toByteArray()), p.title(), p.status(), p.targets());
     }
-    private Pixels paint() {
+    private Pixels paint(Editor selectedEditor) {
         long id = ids.incrementAndGet(), epoch = System.currentTimeMillis(), mono = System.nanoTime();
-        Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
+        Editor editor = selectedEditor != null ? selectedEditor : FileEditorManager.getInstance(project).getSelectedTextEditor();
         if (editor == null || !editor.getComponent().isShowing()) return placeholder(id, epoch, mono);
         JComponent component = editor.getComponent();
         int width = component.getWidth(), height = component.getHeight();
